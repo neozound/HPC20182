@@ -2,25 +2,25 @@ import time
 import threading
 import random
 import numpy as np
+import sys
 
-s = 2
-t = 0
+s = int(sys.argv[1])
+#print s
+
 
 #Matriz A
 A = np.random.rand(s,s)
-print A
+#print A
 
 
 #Matriz B
 B = np.random.rand(s,s)
-print B
+#print B
 
 
 #Matriz C
 C = np.zeros((s,s))
-print C
-
-
+#print C
 
 threads = []
 
@@ -40,7 +40,6 @@ def main():
             threads.append(tr)
             tr.start()
             tr.join()
-
     print C
 
 
