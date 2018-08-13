@@ -1,29 +1,26 @@
 import time
 import threading
 import random
+import numpy as np
 
 s = 2
 t = 0
 
 #Matriz A
-A = []
-for i in range(s):
-  A[i] = [1] * s
+A = np.random.rand(s,s)
 print A
 
-'''
 
 #Matriz B
-B = [1] * s
-for i in range(s):
-  B[i] = [1] * s
+B = np.random.rand(s,s)
 print B
 
+
 #Matriz C
-C = [0] * s
-for i in range(s):
-  C[i] = [0] * s
-#print C
+C = np.zeros((s,s))
+print C
+
+
 
 threads = []
 
@@ -48,4 +45,3 @@ def main():
 
 
 main()
-'''
