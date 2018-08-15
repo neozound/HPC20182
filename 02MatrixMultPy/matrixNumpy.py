@@ -3,10 +3,11 @@ import threading
 import random
 import numpy as np
 import sys
+import time
 
+#argumento
 s = int(sys.argv[1])
 #print s
-
 
 #Matriz A
 A = np.random.rand(s,s)
@@ -34,13 +35,19 @@ def matMult(mf, mc, size):
     #print C[mf][mc]
 
 def main():
+    #timestamp inicial
+    ts_i = time.time()
     for f in range(s):
         for c in range(s):
             tr = threading.Thread(target=matMult, args=(f,c,s,))
             threads.append(tr)
             tr.start()
             tr.join()
-    print C
+    #timestamp final
+    ts_f = time.time()
+    #print C
+    print ts_f - ts_i
+    
 
 
 main()
