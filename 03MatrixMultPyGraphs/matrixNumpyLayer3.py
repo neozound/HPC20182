@@ -65,7 +65,9 @@ def main():
                 tr = threading.Thread(target=matMult, args=(f,c,p,))
                 threads.append(tr)
                 tr.start()
-                tr.join()
+
+        for tr in threads:
+            tr.join()
 
         #timestamp final
         ts_f = time.time()
